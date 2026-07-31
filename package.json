@@ -1,0 +1,60 @@
+{
+  "name": "@haneoka/vega-example-first-light",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Executable Altair authoring and Vega playback tutorial",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haneoka-gakuen/vega-example-first-light.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haneoka-gakuen/vega-example-first-light/issues"
+  },
+  "homepage": "https://github.com/haneoka-gakuen/vega-example-first-light#readme",
+  "type": "module",
+  "scripts": {
+    "assets:generate": "node scripts/generate-chime.mjs && node scripts/generate-ambient.mjs && node scripts/generate-richtext-scene.mjs",
+    "bootstrap": "node scripts/bootstrap-workspace.mjs",
+    "bootstrap:check": "node scripts/bootstrap-workspace.mjs --check",
+    "dev": "vite",
+    "dev:studio": "pnpm --dir .dependencies/altair --filter @haneoka/altair-app dev",
+    "check:studio": "pnpm --dir .dependencies/altair --filter @haneoka/altair-app check",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "check": "pnpm run bootstrap:check && pnpm run typecheck && pnpm run build && pnpm run check:studio"
+  },
+  "dependencies": {
+    "@haneoka/altair": "^0.1.0",
+    "@haneoka/altair-plugin-adv": "^0.1.0",
+    "@haneoka/altair-plugin-drafts": "^0.1.0",
+    "@haneoka/altair-plugin-flow": "^0.1.0",
+    "@haneoka/altair-plugin-history": "^0.1.0",
+    "@haneoka/altair-plugin-marketplace": "^0.1.0",
+    "@haneoka/altair-plugin-prose": "^0.1.0",
+    "@haneoka/altair-plugin-vega-preview": "^0.1.0",
+    "@haneoka/altair-plugin-webgal": "^0.1.0",
+    "@haneoka/altair-plugin-workspace-browser": "^0.1.0",
+    "@haneoka/altair-preset-full": "^0.1.0",
+    "@haneoka/vega": "^0.1.0",
+    "@haneoka/vega-plugin-richtext": "^0.1.0",
+    "@haneoka/vega-preset-full": "^0.1.0",
+    "@haneoka/vega-protocol": "^0.1.0",
+    "@haneoka/vega-react": "^0.1.0",
+    "pixi.js": "6.5.10",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "typescript": "^6.0.3",
+    "vite": "^7.3.6"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.14.0"
+}

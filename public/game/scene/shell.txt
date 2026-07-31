@@ -1,0 +1,13 @@
+; The default shell keeps player controls available without covering the story.
+changeBg:astronomy-room-dawn.png -duration=360 -next;
+changeFigure:aoi.png -left -id=aoi -next;
+changeFigure:ren.png -right -id=ren -next;
+bgm:first-light.wav -volume=28 -enter=400 -next;
+intro:第三章 · 认识播放器;
+莲:右上角的 Menu 只在需要时展开。先打开 Backlog，刚刚看过的台词会按原顺序出现。;
+葵:回到故事后，在这一句打开 Save / Load，把现在的位置存进任意空槽。;
+setVar:firstLightShellCheckpoint="saved";
+莲:再读到这里，然后载入刚才的存档。画面、变量和播放位置都会一起回到保存时。;
+葵:Settings 里的 Music volume 会立即影响正在播放的背景音乐；Flowchart 则记录已经走过的分支。;
+setVar:firstLightShellChecked=true;
+intro:第三章完成;

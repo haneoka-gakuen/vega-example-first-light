@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vega-example-first-light
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: vega-example-first-light
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair
+          path: vega-example-first-light/.dependencies/altair
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-adv
+          path: vega-example-first-light/.dependencies/altair-plugin-adv
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-drafts
+          path: vega-example-first-light/.dependencies/altair-plugin-drafts
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-flow
+          path: vega-example-first-light/.dependencies/altair-plugin-flow
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-history
+          path: vega-example-first-light/.dependencies/altair-plugin-history
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-marketplace
+          path: vega-example-first-light/.dependencies/altair-plugin-marketplace
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-prose
+          path: vega-example-first-light/.dependencies/altair-plugin-prose
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-vega-preview
+          path: vega-example-first-light/.dependencies/altair-plugin-vega-preview
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-webgal
+          path: vega-example-first-light/.dependencies/altair-plugin-webgal
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-plugin-workspace-browser
+          path: vega-example-first-light/.dependencies/altair-plugin-workspace-browser
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/altair-preset-full
+          path: vega-example-first-light/.dependencies/altair-preset-full
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega
+          path: vega-example-first-light/.dependencies/vega
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-marketplace
+          path: vega-example-first-light/.dependencies/vega-marketplace
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-webgal
+          path: vega-example-first-light/.dependencies/vega-plugin-webgal
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-renderer-pixi
+          path: vega-example-first-light/.dependencies/vega-renderer-pixi
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-shell-default
+          path: vega-example-first-light/.dependencies/vega-shell-default
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-theme-haneoka
+          path: vega-example-first-light/.dependencies/vega-theme-haneoka
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vega-ui-portable
+          path: vega-example-first-light/.dependencies/vega-ui-portable
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: vega-example-first-light/pnpm-lock.yaml
+      - run: node scripts/bootstrap-workspace.mjs
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm bootstrap:check
+      - run: pnpm check

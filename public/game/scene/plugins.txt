@@ -1,0 +1,11 @@
+; This demonstration activates every runtime plugin that can share one Pixi player.
+changeBg:creation-lab.png -duration=360 -next;
+changeFigure:aoi.png -left -id=aoi -next;
+changeFigure:ren.png -right -id=ren -next;
+intro:第五章 · 组合扩展;
+葵:这个演示已经启用 Pixi、五种富文本、默认界面、播放器外壳和结束画面。;
+莲:互斥的渲染器不会同时启动；Live2D 与 Spine 也只有在项目提供模型和对应运行时时才加载。;
+葵:Altair 的流程、历史、草稿、导入导出、预览和工作区功能同样来自各自的扩展。;
+莲:实际作品可以保留这套完整组合，也可以删去不用的部分。故事内容不需要因此改写。;
+setVar:firstLightDefaultsChecked=true;
+intro:第五章完成;

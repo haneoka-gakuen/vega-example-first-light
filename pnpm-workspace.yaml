@@ -1,0 +1,22 @@
+packages:
+  - "."
+  - ".dependencies/altair"
+  - ".dependencies/altair/apps/studio"
+  - ".dependencies/altair/packages/preview-client"
+  - ".dependencies/altair-plugin-*"
+  - ".dependencies/altair-preset-full"
+  - ".dependencies/vega"
+  - ".dependencies/vega-marketplace"
+  - ".dependencies/vega/packages/protocol"
+  - ".dependencies/vega/packages/react"
+  - ".dependencies/vega-plugin-*"
+  - ".dependencies/vega-preset-full"
+  - ".dependencies/vega-renderer-*"
+  - ".dependencies/vega-shell-default"
+  - ".dependencies/vega-theme-haneoka"
+  - ".dependencies/vega-ui-portable"
+
+linkWorkspacePackages: true
+
+allowBuilds:
+  esbuild: true

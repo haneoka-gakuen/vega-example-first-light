@@ -1,0 +1,12 @@
+; A user-facing Altair walkthrough for the same project that Vega plays.
+changeBg:creation-lab.png -duration=360 -next;
+changeFigure:aoi.png -left -id=aoi -enter=enter-from-left -next;
+changeFigure:ren.png -right -id=ren -next;
+intro:第四章 · 把故事改成自己的;
+莲:打开 Altair 后，左侧 Assets 会先列出背景、立绘和声音；场景标签就在编辑区上方。;
+葵:默认进入 Visual。点插入按钮，选择“台词”“背景”或“角色”，所有参数都能直接填写，不用背命令名。;
+莲:Flow 会把跳转、选项和场景调用画成真正的流程图。拖动画布或节点，都不会改变剧情语义。;
+葵:需要和 WebGAL 项目互通时再切到 WebGAL 标签。它是兼容格式，不再冒充 Vega 的原生源码。;
+莲:右侧预览会立即播放当前项目。保存、撤销、重做和导出都在顶端的小工具栏里。;
+setVar:firstLightAuthoringChecked=true;
+intro:第四章完成;

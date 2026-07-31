@@ -1,0 +1,13 @@
+; Rich text remains readable in source and explicit plain text stays inert.
+changeBg:creation-lab.png -duration=360 -next;
+changeFigure:aoi.png -left -id=aoi -enter=enter-from-left -next;
+changeFigure:ren.png -right -id=ren -next;
+intro:第二章 · 文字也属于演出;
+葵:台词不只是字符串。ADV 文本可以把「<ruby=First Light>初光</ruby>」加上注音，也能把 <size=125%>重要的字</size> 稍微放大。;
+莲:接下来是一句明确标记为纯文本的内容。里面的符号会原样保留，不会被擅自解释。;
+callScene:scene/plain.txt;
+葵:下面五句由各自的格式插件渲染；没有对应插件时，原文仍会作为纯文本保留。;
+callScene:scene/richtext.txt;
+莲:这些格式同时适用于逐字显示和完整显示，不会改变故事其余部分的文本规则。;
+setVar:firstLightTextChecked=true;
+intro:第二章完成;

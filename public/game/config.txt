@@ -1,0 +1,3 @@
+Game_name:First Light;
+Game_key:first-light;
+Title_img:background/astronomy-room-dawn.png;

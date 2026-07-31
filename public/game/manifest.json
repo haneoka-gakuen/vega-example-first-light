@@ -1,0 +1,13 @@
+{
+  "entry": "game/scene/start.txt",
+  "scenes": [
+    "game/scene/start.txt",
+    "game/scene/runtime.txt",
+    "game/scene/text.txt",
+    "game/scene/plain.txt",
+    "game/scene/richtext.txt",
+    "game/scene/shell.txt",
+    "game/scene/authoring.txt",
+    "game/scene/plugins.txt"
+  ]
+}

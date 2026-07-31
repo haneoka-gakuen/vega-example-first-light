@@ -1,0 +1,15 @@
+; A compact tour of the Pixi stage, transitions, transform channels and audio.
+changeBg:astronomy-room-dawn.png -duration=480 -next;
+changeFigure:aoi.png -left -id=aoi -enter=enter-from-left -next;
+changeFigure:ren.png -right -id=ren -enter=enter-from-right -next;
+intro:第一章 · 让画面动起来;
+playEffect:chime.wav -volume=36 -next;
+葵:刚才的提示音、清晨的部室和我们的立绘，都是项目文件夹里的普通素材。;
+莲:预览不会换一套简化画面。Altair 里看到的，就是 Vega 实际播放的结果。;
+setTransform:{"position":{"x":-96,"y":-27},"alpha":0.72,"brightness":0.72,"blur":3} -target=ren -duration=650;
+葵:例如让莲退到画面后方：位置、透明度、亮度和景深会一起平滑变化。;
+setTransform:{"position":{"x":0,"y":0},"alpha":1,"brightness":1,"blur":0} -target=ren -duration=650;
+setAnimation:shake -target=aoi;
+莲:恢复之后还可以叠加摇动、转场或自定义效果。它们都是可编辑的命令，不是录好的视频。;
+setVar:firstLightStageChecked=true;
+intro:第一章完成;
