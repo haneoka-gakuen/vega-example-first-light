@@ -17,12 +17,13 @@
     "assets:generate": "node scripts/generate-chime.mjs && node scripts/generate-ambient.mjs && node scripts/generate-richtext-scene.mjs",
     "bootstrap": "node scripts/bootstrap-workspace.mjs",
     "bootstrap:check": "node scripts/bootstrap-workspace.mjs --check",
+    "workspace:build": "node scripts/build-workspace.mjs",
     "dev": "vite",
     "dev:studio": "pnpm --dir .dependencies/altair --filter @haneoka/altair-app dev",
     "check:studio": "pnpm --dir .dependencies/altair --filter @haneoka/altair-app check",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
-    "check": "pnpm run bootstrap:check && pnpm run typecheck && pnpm run build && pnpm run check:studio"
+    "check": "pnpm run bootstrap:check && pnpm run workspace:build && pnpm run typecheck && pnpm run build && pnpm run check:studio"
   },
   "dependencies": {
     "@haneoka/altair": "^0.1.0",
