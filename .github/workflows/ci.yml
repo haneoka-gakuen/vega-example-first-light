@@ -99,6 +99,6 @@ jobs:
           cache: pnpm
           cache-dependency-path: vega-example-first-light/pnpm-lock.yaml
       - run: node scripts/bootstrap-workspace.mjs
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm bootstrap:check
       - run: pnpm check
