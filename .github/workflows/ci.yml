@@ -90,6 +90,56 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/vega-ui-portable
           path: vega-example-first-light/.dependencies/vega-ui-portable
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-cubism
+          path: vega-example-first-light/.dependencies/vega-plugin-cubism
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-ending
+          path: vega-example-first-light/.dependencies/vega-plugin-ending
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext-bbcode
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-bbcode
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext-html
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-html
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext-latex
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-latex
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext-markdown
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-markdown
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-richtext-typst
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-typst
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-plugin-spine
+          path: vega-example-first-light/.dependencies/vega-plugin-spine
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-preset-full
+          path: vega-example-first-light/.dependencies/vega-preset-full
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository_owner }}/vega-renderer-three
+          path: vega-example-first-light/.dependencies/vega-renderer-three
+          persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
           version: 11.14.0
