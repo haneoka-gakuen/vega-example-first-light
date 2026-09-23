@@ -3,6 +3,7 @@ packages:
   - ".dependencies/altair"
   - ".dependencies/altair/apps/studio"
   - ".dependencies/altair/packages/preview-client"
+  - ".dependencies/altair/packages/ui-react"
   - ".dependencies/altair-plugin-*"
   - ".dependencies/altair-preset-full"
   - ".dependencies/vega"
