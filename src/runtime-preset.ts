@@ -2,7 +2,7 @@ import type { VegaPlugin } from "@haneoka/vega/plugin";
 import { createVegaFullPreset } from "@haneoka/vega-preset-full";
 
 export const DEFAULT_VEGA_PLUGIN_IDS = Object.freeze([
-  "haneoka.renderer-pixi",
+  "haneoka.renderer-three",
   "haneoka.vega-richtext",
   "haneoka.vega-richtext-bbcode",
   "haneoka.vega-richtext-html",
@@ -11,6 +11,7 @@ export const DEFAULT_VEGA_PLUGIN_IDS = Object.freeze([
   "haneoka.vega-richtext-typst",
   "haneoka.vega-portable-ui",
   "haneoka.vega-shell-default",
+  "haneoka.theme",
   "haneoka.vega-ending",
 ] as const);
 

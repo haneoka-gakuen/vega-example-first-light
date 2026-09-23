@@ -23,7 +23,9 @@
     "check:studio": "pnpm --dir .dependencies/altair --filter @haneoka/altair-app check",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
-    "check": "pnpm run bootstrap:check && pnpm run workspace:build && pnpm run typecheck && pnpm run build && pnpm run check:studio"
+    "check": "pnpm run bootstrap:check && pnpm run workspace:build && pnpm run typecheck && pnpm run build && pnpm run check:studio",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown"
   },
   "dependencies": {
     "@haneoka/altair": "^0.1.0",
@@ -52,7 +54,8 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
     "typescript": "^6.0.3",
-    "vite": "^7.3.6"
+    "vite": "^7.3.6",
+    "prettier": "3.7.4"
   },
   "engines": {
     "node": ">=20"

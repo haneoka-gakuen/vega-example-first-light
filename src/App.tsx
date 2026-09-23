@@ -1,10 +1,6 @@
-import {
-  type CSSProperties,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { type CSSProperties, useEffect, useMemo, useState } from "react";
 import { VegaPlayer } from "@haneoka/vega-react";
+import { prepareStoryAudio } from "@haneoka/vega/audio";
 import type { FirstLightCompilation } from "./compile-project";
 import { createFirstLightRuntimePreset } from "./runtime-preset";
 
@@ -13,7 +9,7 @@ const VEGA_ENGINE_OPTIONS = Object.freeze({
   officialPlugins: DEFAULT_VEGA_PLUGINS,
 });
 const VEGA_PLAYER_OPTIONS = Object.freeze({
-  renderBackend: "pixi",
+  renderBackend: "vega-three-webgl2",
 });
 const VEGA_PLAYER_STYLE = Object.freeze({
   "--vega-stage-background": `center / cover no-repeat url("${import.meta.env.BASE_URL}game/background/astronomy-room-dawn.png")`,
@@ -47,24 +43,23 @@ export function App() {
   useEffect(() => {
     const controller = new AbortController();
     setState({ phase: "loading" });
-    void import("./load-project").then(
-      ({ loadFirstLightProject }) =>
-        loadFirstLightProject(controller.signal),
-    ).then(
-      (value) => {
-        if (!controller.signal.aborted) {
-          setState({ phase: "ready", value });
-        }
-      },
-      (error: unknown) => {
-        if (!controller.signal.aborted) {
-          setState({
-            phase: "error",
-            message: error instanceof Error ? error.message : String(error),
-          });
-        }
-      },
-    );
+    void import("./load-project")
+      .then(({ loadFirstLightProject }) => loadFirstLightProject(controller.signal))
+      .then(
+        (value) => {
+          if (!controller.signal.aborted) {
+            setState({ phase: "ready", value });
+          }
+        },
+        (error: unknown) => {
+          if (!controller.signal.aborted) {
+            setState({
+              phase: "error",
+              message: error instanceof Error ? error.message : String(error),
+            });
+          }
+        },
+      );
     return () => controller.abort();
   }, [revision]);
 
@@ -77,14 +72,17 @@ export function App() {
             title:
               typeof compilation.project.title === "string"
                 ? compilation.project.title
-                : (compilation.project.title["zh-CN"] ??
-                  compilation.project.id),
+                : (compilation.project.title["zh-CN"] ?? compilation.project.id),
           }
         : undefined,
     [compilation],
   );
   return (
-    <main className="page-shell">
+    <main
+      className="page-shell"
+      onKeyDownCapture={(event) => prepareStoryAudio(event.nativeEvent)}
+      onPointerDownCapture={(event) => prepareStoryAudio(event.nativeEvent)}
+    >
       <header className="site-header">
         <a className="wordmark" href="#">
           <span aria-hidden="true" className="mark">
@@ -100,16 +98,11 @@ export function App() {
         <nav aria-label="Project actions">
           <button
             disabled={!compilation}
-            onClick={() =>
-              compilation &&
-              saveJson("first-light.vega.json", compilation.project)
-            }
+            onClick={() => compilation && saveJson("first-light.vega.json", compilation.project)}
           >
             导出
           </button>
-          <button onClick={() => setRevision((value) => value + 1)}>
-            重新开始
-          </button>
+          <button onClick={() => setRevision((value) => value + 1)}>重新开始</button>
         </nav>
       </header>
 
@@ -125,7 +118,7 @@ export function App() {
             project={state.value.project}
             shell={shell}
             style={VEGA_PLAYER_STYLE}
-            theme="portable"
+            theme="haneoka"
           />
         ) : state.phase === "error" ? (
           <div className="load-state error" role="alert">

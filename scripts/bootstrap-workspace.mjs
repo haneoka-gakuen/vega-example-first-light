@@ -60,12 +60,7 @@ for (const repository of repositories) {
   if (checkOnly) continue;
   const result = spawnSync(
     "git",
-    [
-      "clone",
-      "--depth=1",
-      `https://github.com/${organization}/${repository}.git`,
-      destination,
-    ],
+    ["clone", "--depth=1", `https://github.com/${organization}/${repository}.git`, destination],
     { stdio: "inherit" },
   );
   if (result.status !== 0) {
@@ -78,8 +73,6 @@ if (checkOnly && missing.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    checkOnly
-      ? `Workspace ready: ${repositories.length}/${repositories.length}`
-      : "Workspace repositories are ready.",
+    checkOnly ? `Workspace ready: ${repositories.length}/${repositories.length}` : "Workspace repositories are ready.",
   );
 }

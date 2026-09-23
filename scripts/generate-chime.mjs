@@ -32,10 +32,7 @@ for (let index = 0; index < samples; index += 1) {
     Math.sin(2 * Math.PI * 659.255 * time) * 0.58 +
     Math.sin(2 * Math.PI * 987.767 * time) * 0.3 +
     Math.sin(2 * Math.PI * 1318.51 * time) * 0.12;
-  const value = Math.max(
-    -1,
-    Math.min(1, wave * attack * release * 0.42),
-  );
+  const value = Math.max(-1, Math.min(1, wave * attack * release * 0.42));
   buffer.writeInt16LE(Math.round(value * 32767), 44 + index * 2);
 }
 

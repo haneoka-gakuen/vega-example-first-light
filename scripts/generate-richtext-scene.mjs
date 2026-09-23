@@ -1,19 +1,11 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import {
-  importWebGal,
-  serializeWebGalText,
-} from "@haneoka/altair-plugin-webgal";
+import { importWebGal, serializeWebGalText } from "@haneoka/altair-plugin-webgal";
 import { VEGA_ADV_OPCODE } from "@haneoka/vega-protocol";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const writeScene = async ({
-  id,
-  name,
-  lines,
-  configure,
-}) => {
+const writeScene = async ({ id, name, lines, configure }) => {
   const project = importWebGal(lines.join("\n"), {
     sceneId: id,
     sceneName: name,
@@ -42,9 +34,7 @@ await writeScene({
   ],
   configure(commands) {
     const location = commands.find(({ source }) => source?.command === "intro");
-    const plainTalk = commands.find(
-      ({ fields }) => fields.targetName === "纯文本",
-    );
+    const plainTalk = commands.find(({ fields }) => fields.targetName === "纯文本");
     if (!location || !plainTalk) {
       throw new ReferenceError("Unable to build the plain-text tutorial");
     }
@@ -99,9 +89,7 @@ await writeScene({
     }
     location.command = VEGA_ADV_OPCODE.Location;
     for (const sample of richFormats) {
-      const talk = commands.find(
-        ({ fields }) => fields.targetName === sample.speaker,
-      );
+      const talk = commands.find(({ fields }) => fields.targetName === sample.speaker);
       if (!talk) {
         throw new ReferenceError(`Missing ${sample.format} tutorial line`);
       }
