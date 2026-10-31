@@ -1,7 +1,5 @@
 # First Light
 
-[English](README.md) · [简体中文](README.zh-CN.md)
-
 First Light is a short visual novel that doubles as a guided tour of the
 suite. Two members of an astronomy club greet you at dawn and let you choose
 what to see: stage effects, text and typesetting, the player shell, editing in
