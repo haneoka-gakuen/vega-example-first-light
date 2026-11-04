@@ -144,7 +144,6 @@ jobs:
           node-version: 22
           cache: pnpm
           cache-dependency-path: vega-example-first-light/pnpm-lock.yaml
-      - run: node scripts/bootstrap-workspace.mjs
       - name: Check out altair
         uses: actions/checkout@v4
         with:
@@ -357,39 +356,28 @@ jobs:
           persist-credentials: false
       - name: Set up locked Vega Rust and WASM tools
         uses: ./vega-example-first-light/.dependencies/vega/.github/actions/setup-wasm
+      - name: Check out altair-plugin-haneoka
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-haneoka
+          ref: d82487d031f8c53996d202ebb67e66f796b43757
+          path: vega-example-first-light/.dependencies/altair-plugin-haneoka
+          persist-credentials: false
+      - name: Check out altair-plugin-bestdori
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-bestdori
+          ref: 3004ea0cbe45cdd3e511a3201509bce6a60fd69f
+          path: vega-example-first-light/.dependencies/altair-plugin-bestdori
+          persist-credentials: false
+      - name: Check out design-tokens
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/design-tokens
+          ref: 5f5db632b974f11e5d096fba8ceccf8af1758c1f
+          path: vega-example-first-light/.dependencies/design-tokens
+          persist-credentials: false
+      - run: node scripts/bootstrap-workspace.mjs --check
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm bootstrap:check
-      - name: Build additional pinned SDK dependencies
-        working-directory: vega-example-first-light
-        run: |-
-          pnpm --filter @haneoka/vega build:core
-          pnpm --filter @haneoka/altair build:core
-          pnpm --filter @haneoka/altair-plugin-adv build
-          pnpm --filter @haneoka/altair-plugin-drafts build
-          pnpm --filter @haneoka/altair-plugin-flow build
-          pnpm --filter @haneoka/altair-plugin-history build
-          pnpm --filter @haneoka/altair-plugin-marketplace build
-          pnpm --filter @haneoka/altair-plugin-prose build
-          pnpm --filter @haneoka/vega-plugin-haneoka build
-          pnpm --filter @haneoka/vega-renderer-three build
-          pnpm --filter @haneoka/vega-plugin-composite build
-          pnpm --filter @haneoka/altair-plugin-vega-preview build
-          pnpm --filter @haneoka/vega-plugin-webgal build
-          pnpm --filter @haneoka/altair-plugin-webgal build
-          pnpm --filter @haneoka/altair-plugin-workspace-browser build
-          pnpm --filter @haneoka/altair-preset-full build
-          pnpm --filter @haneoka/vega-catalog-official build
-          pnpm --filter @haneoka/vega-plugin-ending build
-          pnpm --filter @haneoka/vega-plugin-cubism build
-          pnpm --filter @haneoka/vega-plugin-richtext build
-          pnpm --filter @haneoka/vega-plugin-richtext-bbcode build
-          pnpm --filter @haneoka/vega-plugin-richtext-html build
-          pnpm --filter @haneoka/vega-plugin-richtext-latex build
-          pnpm --filter @haneoka/vega-plugin-richtext-markdown build
-          pnpm --filter @haneoka/vega-plugin-richtext-typst build
-          pnpm --filter @haneoka/vega-plugin-spine build
-          pnpm --filter @haneoka/vega-shell-default build
-          pnpm --filter @haneoka/vega-theme-haneoka build
-          pnpm --filter @haneoka/vega-ui-portable build
-          pnpm --filter @haneoka/vega-preset-full build
       - run: pnpm check

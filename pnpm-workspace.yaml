@@ -37,6 +37,9 @@ packages:
   - .dependencies/vega-plugin-webgal
   - .dependencies/vega-plugin-haneoka
   - .dependencies/vega-plugin-composite
+  - .dependencies/altair-plugin-haneoka
+  - .dependencies/altair-plugin-bestdori
+  - .dependencies/design-tokens
 
 linkWorkspacePackages: true
 
