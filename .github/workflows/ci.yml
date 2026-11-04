@@ -148,7 +148,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: haneoka-gakuen/altair
-          ref: cd4e44d0670df22fe2e8f8ae3ebab3ab8365766d
+          ref: d8f14f83e5b48f0611be2436a30abd75d5077ed0
           path: vega-example-first-light/.dependencies/altair
           persist-credentials: false
       - name: Check out altair-preset-full
@@ -376,6 +376,13 @@ jobs:
           repository: haneoka-gakuen/design-tokens
           ref: 5f5db632b974f11e5d096fba8ceccf8af1758c1f
           path: vega-example-first-light/.dependencies/design-tokens
+          persist-credentials: false
+      - name: Check out altair-plugin-models
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-models
+          ref: b09c3b838d5b89d01b5a74c188e328c2a4c0d110
+          path: vega-example-first-light/.dependencies/altair-plugin-models
           persist-credentials: false
       - run: node scripts/bootstrap-workspace.mjs --check
       - run: pnpm install --no-frozen-lockfile
