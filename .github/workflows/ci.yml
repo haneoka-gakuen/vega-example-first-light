@@ -145,6 +145,249 @@ jobs:
           cache: pnpm
           cache-dependency-path: vega-example-first-light/pnpm-lock.yaml
       - run: node scripts/bootstrap-workspace.mjs
+      - name: Check out altair
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair
+          ref: cd4e44d0670df22fe2e8f8ae3ebab3ab8365766d
+          path: vega-example-first-light/.dependencies/altair
+          persist-credentials: false
+      - name: Check out altair-preset-full
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-preset-full
+          ref: b0b97ecc8f9b951bb2678ae9f73d779ad5957fb2
+          path: vega-example-first-light/.dependencies/altair-preset-full
+          persist-credentials: false
+      - name: Check out vega
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega
+          ref: 2fa1b39c1176852db38a45b453c737e8e3439f5d
+          path: vega-example-first-light/.dependencies/vega
+          persist-credentials: false
+      - name: Check out vega-marketplace
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-marketplace
+          ref: 8e3e3a2fd288f8b1d4e43f9fce43b6de3650449c
+          path: vega-example-first-light/.dependencies/vega-marketplace
+          persist-credentials: false
+      - name: Check out vega-preset-full
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-preset-full
+          ref: 40ea3118f9a3b29925338e9c3330f486315993f7
+          path: vega-example-first-light/.dependencies/vega-preset-full
+          persist-credentials: false
+      - name: Check out vega-renderer-three
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-renderer-three
+          ref: 33a9127d9537cc5c303fceaa35fafda403713b42
+          path: vega-example-first-light/.dependencies/vega-renderer-three
+          persist-credentials: false
+      - name: Check out vega-shell-default
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-shell-default
+          ref: ab0494d9a7b46e3221e827a3649aa83a06d772f6
+          path: vega-example-first-light/.dependencies/vega-shell-default
+          persist-credentials: false
+      - name: Check out vega-theme-haneoka
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-theme-haneoka
+          ref: 44482e2b9f8d58cf5311a02ac10b2d6694d039ab
+          path: vega-example-first-light/.dependencies/vega-theme-haneoka
+          persist-credentials: false
+      - name: Check out vega-ui-portable
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-ui-portable
+          ref: 06af193c1c7c7939394469aec5e7cfa7e71b220d
+          path: vega-example-first-light/.dependencies/vega-ui-portable
+          persist-credentials: false
+      - name: Check out altair-plugin-adv
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-adv
+          ref: bfc4061296dfa589b6b8d586a369b3ff445c340d
+          path: vega-example-first-light/.dependencies/altair-plugin-adv
+          persist-credentials: false
+      - name: Check out altair-plugin-drafts
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-drafts
+          ref: 8ff0281b86cb9bba22403712e0c6886edb21b01b
+          path: vega-example-first-light/.dependencies/altair-plugin-drafts
+          persist-credentials: false
+      - name: Check out altair-plugin-flow
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-flow
+          ref: c61fa42f9ee4ff5e587c3dd90f3ed2414414bcc3
+          path: vega-example-first-light/.dependencies/altair-plugin-flow
+          persist-credentials: false
+      - name: Check out altair-plugin-history
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-history
+          ref: f7622667bc6032d4804ef94cbe42dbc1bad87e1d
+          path: vega-example-first-light/.dependencies/altair-plugin-history
+          persist-credentials: false
+      - name: Check out altair-plugin-marketplace
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-marketplace
+          ref: 55913c01a38011c26710da5ff94e45d55fe5508f
+          path: vega-example-first-light/.dependencies/altair-plugin-marketplace
+          persist-credentials: false
+      - name: Check out altair-plugin-prose
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-prose
+          ref: 4f37e3270bc7b4b8db3a9b7c034e03c58c9f1045
+          path: vega-example-first-light/.dependencies/altair-plugin-prose
+          persist-credentials: false
+      - name: Check out altair-plugin-vega-preview
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-vega-preview
+          ref: f826b4e39043cbe8ae17d7fc77e66ee062381ca0
+          path: vega-example-first-light/.dependencies/altair-plugin-vega-preview
+          persist-credentials: false
+      - name: Check out altair-plugin-webgal
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-webgal
+          ref: b2524189a84c510c0275a8050905458d0a56430e
+          path: vega-example-first-light/.dependencies/altair-plugin-webgal
+          persist-credentials: false
+      - name: Check out altair-plugin-workspace-browser
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/altair-plugin-workspace-browser
+          ref: ddecaedd4fc78ca1ad50a95fd10ad3771a2d5b05
+          path: vega-example-first-light/.dependencies/altair-plugin-workspace-browser
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext
+          ref: c043823cbb2c63a6966343db2e9ef0fb8ba4b703
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext
+          persist-credentials: false
+      - name: Check out vega-plugin-ending
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-ending
+          ref: 2e50639f6540623beeed3ad5ece389bc50ec3309
+          path: vega-example-first-light/.dependencies/vega-plugin-ending
+          persist-credentials: false
+      - name: Check out vega-plugin-cubism
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-cubism
+          ref: 0994e901e2c926c96072603ad40daaf180add9a5
+          path: vega-example-first-light/.dependencies/vega-plugin-cubism
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext-bbcode
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext-bbcode
+          ref: 9365fbf87f931121ff1f074ba7d2c9bdf0ccf7be
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-bbcode
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext-html
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext-html
+          ref: 7217b47ebc68edab4bf90f6197c8f0409422a341
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-html
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext-latex
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext-latex
+          ref: 15a842638e56874f35fcf437f93a4b8ae1955490
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-latex
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext-markdown
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext-markdown
+          ref: c8fe55aa8e9980b8a0ccd9359e79623205946901
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-markdown
+          persist-credentials: false
+      - name: Check out vega-plugin-richtext-typst
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-richtext-typst
+          ref: 20e233d18b95eabd862c7948ecb80462c96ca130
+          path: vega-example-first-light/.dependencies/vega-plugin-richtext-typst
+          persist-credentials: false
+      - name: Check out vega-plugin-spine
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-spine
+          ref: 96b185e9d78bbce885dfbfe6e3fbdce8a500e7ee
+          path: vega-example-first-light/.dependencies/vega-plugin-spine
+          persist-credentials: false
+      - name: Check out vega-plugin-webgal
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-webgal
+          ref: 0d68dbd063eb1d113ecefda587f38b6b9c78e3f9
+          path: vega-example-first-light/.dependencies/vega-plugin-webgal
+          persist-credentials: false
+      - name: Check out vega-plugin-haneoka
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-haneoka
+          ref: d02da4c16eee7413dbc07ade34ac288d05926456
+          path: vega-example-first-light/.dependencies/vega-plugin-haneoka
+          persist-credentials: false
+      - name: Check out vega-plugin-composite
+        uses: actions/checkout@v4
+        with:
+          repository: haneoka-gakuen/vega-plugin-composite
+          ref: 5c151e08ee4e8cad9a0fbd98e97d06260b507b66
+          path: vega-example-first-light/.dependencies/vega-plugin-composite
+          persist-credentials: false
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm bootstrap:check
+      - name: Build additional pinned SDK dependencies
+        working-directory: vega-example-first-light
+        run: |-
+          pnpm --filter @haneoka/vega build:core
+          pnpm --filter @haneoka/altair build:core
+          pnpm --filter @haneoka/altair-plugin-adv build
+          pnpm --filter @haneoka/altair-plugin-drafts build
+          pnpm --filter @haneoka/altair-plugin-flow build
+          pnpm --filter @haneoka/altair-plugin-history build
+          pnpm --filter @haneoka/altair-plugin-marketplace build
+          pnpm --filter @haneoka/altair-plugin-prose build
+          pnpm --filter @haneoka/vega-plugin-haneoka build
+          pnpm --filter @haneoka/vega-renderer-three build
+          pnpm --filter @haneoka/vega-plugin-composite build
+          pnpm --filter @haneoka/altair-plugin-vega-preview build
+          pnpm --filter @haneoka/vega-plugin-webgal build
+          pnpm --filter @haneoka/altair-plugin-webgal build
+          pnpm --filter @haneoka/altair-plugin-workspace-browser build
+          pnpm --filter @haneoka/altair-preset-full build
+          pnpm --filter @haneoka/vega-catalog-official build
+          pnpm --filter @haneoka/vega-plugin-ending build
+          pnpm --filter @haneoka/vega-plugin-cubism build
+          pnpm --filter @haneoka/vega-plugin-richtext build
+          pnpm --filter @haneoka/vega-plugin-richtext-bbcode build
+          pnpm --filter @haneoka/vega-plugin-richtext-html build
+          pnpm --filter @haneoka/vega-plugin-richtext-latex build
+          pnpm --filter @haneoka/vega-plugin-richtext-markdown build
+          pnpm --filter @haneoka/vega-plugin-richtext-typst build
+          pnpm --filter @haneoka/vega-plugin-spine build
+          pnpm --filter @haneoka/vega-shell-default build
+          pnpm --filter @haneoka/vega-theme-haneoka build
+          pnpm --filter @haneoka/vega-ui-portable build
+          pnpm --filter @haneoka/vega-preset-full build
       - run: pnpm check
