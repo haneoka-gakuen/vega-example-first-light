@@ -5,6 +5,10 @@ import { fileURLToPath } from "node:url";
 
 const organization = "haneoka-gakuen";
 const repositories = Object.freeze([
+  "vega-plugin-haneoka",
+  "design-tokens",
+  "altair-plugin-bestdori",
+  "altair-plugin-haneoka",
   "altair",
   "altair-plugin-adv",
   "altair-plugin-drafts",
