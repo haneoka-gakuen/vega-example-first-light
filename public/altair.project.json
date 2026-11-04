@@ -74,7 +74,7 @@
       "permissions": ["filesystem:read", "filesystem:write"]
     },
     {
-      "id": "haneoka.renderer-pixi",
+      "id": "haneoka.renderer-three",
       "version": "0.1.0",
       "enabled": true,
       "permissions": ["render:webgl"]

@@ -1,4 +1,4 @@
-; A compact tour of the Pixi stage, transitions, transform channels and audio.
+; A compact tour of the Three stage, transitions, transform channels and audio.
 changeBg:astronomy-room-dawn.png -duration=480 -next;
 changeFigure:aoi.png -left -id=aoi -enter=enter-from-left -next;
 changeFigure:ren.png -right -id=ren -enter=enter-from-right -next;

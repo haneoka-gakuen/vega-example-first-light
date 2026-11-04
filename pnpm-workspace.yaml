@@ -12,10 +12,30 @@ packages:
   - ".dependencies/vega/packages/react"
   - ".dependencies/vega-plugin-*"
   - ".dependencies/vega-preset-full"
-  - ".dependencies/vega-renderer-*"
+  - ".dependencies/vega-renderer-three"
   - ".dependencies/vega-shell-default"
   - ".dependencies/vega-theme-haneoka"
   - ".dependencies/vega-ui-portable"
+
+  - ".dependencies/altair-plugin-adv"
+
+  - ".dependencies/altair-plugin-drafts"
+
+  - ".dependencies/altair-plugin-flow"
+
+  - ".dependencies/altair-plugin-history"
+
+  - ".dependencies/altair-plugin-marketplace"
+
+  - ".dependencies/altair-plugin-prose"
+
+  - ".dependencies/altair-plugin-vega-preview"
+
+  - ".dependencies/altair-plugin-webgal"
+
+  - ".dependencies/altair-plugin-workspace-browser"
+
+  - ".dependencies/vega-plugin-richtext"
 
 linkWorkspacePackages: true
 
