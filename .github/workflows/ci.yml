@@ -355,6 +355,8 @@ jobs:
           ref: 5c151e08ee4e8cad9a0fbd98e97d06260b507b66
           path: vega-example-first-light/.dependencies/vega-plugin-composite
           persist-credentials: false
+      - name: Set up locked Vega Rust and WASM tools
+        uses: ./vega-example-first-light/.dependencies/vega/.github/actions/setup-wasm
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm bootstrap:check
       - name: Build additional pinned SDK dependencies
