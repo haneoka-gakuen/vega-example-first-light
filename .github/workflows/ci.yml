@@ -76,10 +76,6 @@ jobs:
           path: vega-example-first-light/.dependencies/vega-plugin-webgal
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/vega-renderer-pixi
-          path: vega-example-first-light/.dependencies/vega-renderer-pixi
-      - uses: actions/checkout@v4
-        with:
           repository: ${{ github.repository_owner }}/vega-shell-default
           path: vega-example-first-light/.dependencies/vega-shell-default
       - uses: actions/checkout@v4

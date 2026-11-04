@@ -4,7 +4,6 @@ const pnpm = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
 const builds = [
   ["@haneoka/vega", "build"],
   ["@haneoka/vega-catalog-official", "build"],
-  ["@haneoka/vega-renderer-pixi", "build"],
   ["@haneoka/vega-renderer-three", "build"],
   ["@haneoka/vega-plugin-richtext", "build"],
   ["@haneoka/vega-plugin-richtext-bbcode", "build"],

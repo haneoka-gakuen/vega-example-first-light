@@ -31,7 +31,6 @@ const repositories = Object.freeze([
   "vega-plugin-spine",
   "vega-plugin-webgal",
   "vega-preset-full",
-  "vega-renderer-pixi",
   "vega-renderer-three",
   "vega-shell-default",
   "vega-theme-haneoka",
